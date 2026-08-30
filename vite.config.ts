@@ -15,6 +15,7 @@ export default defineConfig({
       "@helper": path.resolve(__dirname, "./src/helpers"),
       "@layout": path.resolve(__dirname, "./src/layouts"),
       "@provider": path.resolve(__dirname, "./src/providers"),
+      "@page": path.resolve(__dirname, "./src/pages"),
       "@route": path.resolve(__dirname, "./src/routes"),
       "@hook": path.resolve(__dirname, "./src/hooks"),
     }

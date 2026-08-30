@@ -31,7 +31,8 @@
       "@helper/*": [ "./src/helpers/*" ],
       "@layout": [ "./src/layouts" ],
       "@provider/*": [ "./src/providers/*" ],
-      "@route/*": [ "./src/routes/*" ],
+      "@page": [ "./src/pages" ],
+      "@route": [ "./src/routes" ],
       "@hook": [ "./src/hooks" ]
     }
   },
