@@ -20,7 +20,20 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Alias */
+      "paths": {
+      "@assets": [ "./src/assets" ],
+      "@component/*": [ "./src/components/*" ],
+      "@config": [ "./src/configs", ],
+      "@context": [ "./src/context", ],
+      "@helper/*": [ "./src/helpers/*" ],
+      "@layout": [ "./src/layouts" ],
+      "@provider/*": [ "./src/providers/*" ],
+      "@route/*": [ "./src/routes/*" ],
+      "@hook": [ "./src/hooks" ]
+    }
   },
   "include": ["src"]
 }
