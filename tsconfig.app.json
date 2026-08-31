@@ -28,7 +28,7 @@
       "@component/*": [ "./src/components/*" ],
       "@config": [ "./src/configs", ],
       "@context": [ "./src/context", ],
-      "@helper/*": [ "./src/helpers/*" ],
+      "@helper": [ "./src/helpers" ],
       "@layout": [ "./src/layouts" ],
       "@provider/*": [ "./src/providers/*" ],
       "@page": [ "./src/pages" ],
