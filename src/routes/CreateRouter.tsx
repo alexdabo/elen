@@ -59,4 +59,4 @@ import { FormalityPaymentInPersonPage } from "../pages/formalities/PaymentInPers
         },
       ],
     },
-  ]);
+  ], { basename: '/elen' });
