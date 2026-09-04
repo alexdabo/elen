@@ -1,7 +1,7 @@
   import { createBrowserRouter } from "react-router-dom";
   import { MainLayout } from "@layout";
-  import { FormalitiesInfoPage, FormalitiesLayout, FormalitiesPage, FormalityCertificatePage, FormalityDetail, FormalityFormPage, FormalityPaymentPage, FormalityReview, HomePage } from "@page";
-  import { FORMALITIES_CERTIFICATE_PATH, FORMALITIES_CREATE_PATH, FORMALITIES_DETAIL_PATH,  FORMALITIES_INFO_PATH, FORMALITIES_INPERSON_PAIMENT_PATH, FORMALITIES_ONLINE_PAIMENT_PATH, FORMALITIES_PATH, FORMALITIES_REVIEW_PATH, HOME_PATH } from "@config";
+  import { DeveloperPage, FormalitiesInfoPage, FormalitiesLayout, FormalitiesPage, FormalityCertificatePage, FormalityDetail, FormalityFormPage, FormalityPaymentPage, FormalityReview, HomePage } from "@page";
+  import { FORMALITIES_CERTIFICATE_PATH, FORMALITIES_CREATE_PATH, FORMALITIES_DETAIL_PATH,  FORMALITIES_INFO_PATH, FORMALITIES_INPERSON_PAIMENT_PATH, FORMALITIES_ONLINE_PAIMENT_PATH, FORMALITIES_PATH, FORMALITIES_REVIEW_PATH, HOME_PATH, INFO_PATH } from "@config";
 import { FormalityPaymentInPersonPage } from "../pages/formalities/PaymentInPerson";
 
 
@@ -15,6 +15,10 @@ import { FormalityPaymentInPersonPage } from "../pages/formalities/PaymentInPers
         {
           index: true,
           element: <HomePage />,
+        },
+   {
+          path:INFO_PATH,
+          element: <DeveloperPage />,
         },
 
         // CRUD for formalities

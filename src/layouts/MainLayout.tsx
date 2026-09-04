@@ -1,9 +1,10 @@
 import { Fragment } from "react"
-import {Link, Outlet} from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 import Imagotipo from '@assets/imagotipo.png'
+import { INFO_PATH } from "@config"
 
-export const MainLayout:React.FC=()=>{
+export const MainLayout: React.FC = () => {
     return <Fragment>
         <header
             className="bg-white border-b border-gray-200 sticky top-0 z-50 no-print"
@@ -17,8 +18,38 @@ export const MainLayout:React.FC=()=>{
                 <span
                     className="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1 rounded-full"
                 >
-                    DEMO · Prototipo conceptual
+                    Prototipo conceptual
                 </span>
+
+                <Link
+                    to={INFO_PATH}
+                    className="group flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200"
+                >
+                    <span
+                        className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 text-gray-500 group-hover:bg-gray-200 group-hover:text-gray-700 transition-colors"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            className="w-4 h-4"
+                        >
+                            <circle cx="12" cy="12" r="9" />
+                            <path
+                                strokeLinecap="round"
+                                d="M12 11v5"
+                            />
+                            <path
+                                strokeLinecap="round"
+                                d="M12 8h.01"
+                            />
+                        </svg>
+                    </span>
+
+                    <span>Acerca</span>
+                </Link>
             </div>
         </header>
 

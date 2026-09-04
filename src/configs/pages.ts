@@ -1,6 +1,7 @@
 export const HOME_PATH = '/'
 
 export const FORMALITIES_PATH = '/mis-tramites'
+export const INFO_PATH = '/acerca'
 export const FORMALITIES_INFO_PATH = `${FORMALITIES_PATH}/info`
 export const FORMALITIES_CREATE_PATH = `${FORMALITIES_PATH}/nuevo`
 export const FORMALITIES_REVIEW_PATH = `${FORMALITIES_PATH}/revision`
