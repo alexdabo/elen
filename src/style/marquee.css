@@ -1,0 +1,22 @@
+/* Marquee: infinite horizontal scroll with two duplicated groups */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeMove 30s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+@keyframes marqueeMove {
+  to {
+    transform: translateX(-50%);
+  }
+}

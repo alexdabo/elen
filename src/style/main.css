@@ -1,38 +1,10 @@
+/* Single entry point: import everything in the right order */
 @import "tailwindcss";
 
-@theme {
-  --color-primary-50: #d3ffd3;
-  --color-primary-100: #9bff9b;
-  --color-primary-200: #15f316;
-  --color-primary-300: #12dc13;
-  --color-primary-400: #0ec30f;
-  --color-primary-500: #0bab0c;
-  --color-primary-600: #078807;
-  --color-primary-700: #046604;
-  --color-primary-800: #024402;
-  --color-primary-900: #012601;
-  --color-primary-950: #001800;
-}
-
-@keyframes fab-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.92);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
+@import "./theme.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./marquee.css";
+@import "./animations.css";
+@import "./components.css";
+@import "./accessibility.css";

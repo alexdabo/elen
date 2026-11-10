@@ -1,5 +1,6 @@
 export * from './home/HomePage'
 export * from './info/DeveloperPage'
+export * from './info/LandingPage'
 export * from './formalities/FormalitiesRootPage'
 export * from './formalities/FormalityInfo'
 export * from './formalities/FormalityForm'

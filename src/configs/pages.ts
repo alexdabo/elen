@@ -1,5 +1,5 @@
-export const HOME_PATH = '/'
-
+export const LANDING_PATH = '/'
+export const HOME_PATH = '/bienvenida'
 export const FORMALITIES_PATH = '/mis-tramites'
 export const INFO_PATH = '/acerca'
 export const FORMALITIES_INFO_PATH = `${FORMALITIES_PATH}/info`

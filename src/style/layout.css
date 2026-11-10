@@ -1,0 +1,18 @@
+/* Decorative dotted grid background with soft auroras */
+.bg-grid {
+  background-image:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(16, 185, 129, .09), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 25%, rgba(245, 158, 11, .07), transparent 60%),
+    radial-gradient(circle at 1px 1px, rgba(2, 44, 34, .06) 1px, transparent 1.5px);
+  background-size: 100% 100%, 100% 100%, 22px 22px;
+}
+
+/* Sticky header: transition + elevated state on scroll */
+#site-header {
+  transition: background-color .3s ease, box-shadow .3s ease;
+}
+
+#site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, .88);
+  box-shadow: 0 12px 32px -20px rgba(5, 46, 22, .3);
+}

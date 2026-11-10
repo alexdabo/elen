@@ -1,0 +1,29 @@
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .blob,
+  .float-soft,
+  .text-gradient,
+  .gradient-border::before,
+  .pulse-ring::before,
+  .animate-ping,
+  .animate-bounce {
+    animation: none !important;
+  }
+
+  .reveal,
+  .hero-rise {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .grow-underline::after {
+    transform: scaleX(1) !important;
+  }
+}

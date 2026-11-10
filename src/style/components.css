@@ -1,0 +1,170 @@
+/* Self-contained visual components: borders, rings, gradients, lifts */
+
+/* ---------- Animated amber border (main notice) ---------- */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 1.5rem;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    rgba(217, 119, 6, .85) 50deg,
+    rgba(251, 191, 36, .95) 85deg,
+    transparent 135deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: borderSpin 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes borderSpin {
+  to { --angle: 360deg; }
+}
+
+/* ---------- Pulsing alert icon ---------- */
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, .5);
+  animation: pulseRing 2.4s cubic-bezier(.4, 0, .6, 1) infinite;
+}
+
+@keyframes pulseRing {
+  70%  { box-shadow: 0 0 0 14px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+/* ---------- Animated gradient text ---------- */
+.text-gradient {
+  background-image: linear-gradient(90deg, #0bab0c, #10b981, #0d9488, #0bab0c);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientSlide 7s ease-in-out infinite;
+}
+
+@keyframes gradientSlide {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ---------- Shine sweep on primary buttons ---------- */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, .5), transparent);
+  transform: skewX(-18deg);
+  transition: left .55s ease;
+}
+
+.btn-shine:hover::after {
+  left: 130%;
+}
+
+/* ---------- Underline that grows when revealed ---------- */
+.grow-underline {
+  position: relative;
+  white-space: nowrap;
+}
+
+.grow-underline::after {
+  content: "";
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: -6px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0bab0c, #34d399);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .9s cubic-bezier(.22, 1, .36, 1) .25s;
+}
+
+.revealed .grow-underline::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Cards with lift + top accent bar ---------- */
+.card-lift {
+  transition:
+    transform .35s cubic-bezier(.22, 1, .36, 1),
+    box-shadow .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.card-lift::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(90deg, #0bab0c, #10b981);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+}
+
+.card-lift.accent-gray::before {
+  background: linear-gradient(90deg, #9ca3af, #6b7280);
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 45px -20px rgba(5, 46, 22, .25);
+}
+
+.card-lift:hover::before {
+  transform: scaleX(1);
+}
+
+/* ---------- List items: icon highlight on hover ---------- */
+.li-hover li:hover .li-dot {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.li-hover li:hover .li-dot-gray {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ---------- "DEMO" watermark ---------- */
+.watermark {
+  color: rgba(255, 255, 255, .04);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, .07);
+  user-select: none;
+}

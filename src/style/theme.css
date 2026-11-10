@@ -1,0 +1,17 @@
+/* Tailwind v4 theme tokens: colors and fonts */
+@theme {
+  --color-primary-50: #d3ffd3;
+  --color-primary-100: #9bff9b;
+  --color-primary-200: #15f316;
+  --color-primary-300: #12dc13;
+  --color-primary-400: #0ec30f;
+  --color-primary-500: #0bab0c;
+  --color-primary-600: #078807;
+  --color-primary-700: #046604;
+  --color-primary-800: #024402;
+  --color-primary-900: #012601;
+  --color-primary-950: #001800;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
