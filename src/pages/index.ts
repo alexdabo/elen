@@ -11,3 +11,5 @@ export * from './home/HomePage'
 export * from './info/DeveloperPage'
 export * from './info/LandingPage'
 export * from './formalities/PaymentInPerson'
+
+export { FormalitiesProvider } from './formalities/FormalitiesContext'

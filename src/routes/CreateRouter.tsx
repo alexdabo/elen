@@ -1,5 +1,5 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { MainLayout } from '@layout'
+import { createBrowserRouter, Outlet } from 'react-router-dom'
+import { MainLayout, PageTransition } from '@layout'
 import {
   FORMALITIES_CERTIFICATE_PATH,
   FORMALITIES_CREATE_PATH,
@@ -14,8 +14,8 @@ import {
 } from '@config'
 import {
   DeveloperPage,
+  FormalitiesProvider,
   FormalitiesInfoPage,
-  FormalitiesLayout,
   FormalitiesPage,
   FormalityCertificatePage,
   FormalityDetail,
@@ -27,65 +27,53 @@ import {
   LandingPage
 } from '@page'
 
-// Define your routes here
 export const router = createBrowserRouter([
   {
     element: <MainLayout isContainer />,
-    children: [
-      {
-        index: true,
-        element: <LandingPage />
-      }
-    ]
+    children: [{ index: true, element: <LandingPage /> }]
   },
   {
     element: <MainLayout />,
     children: [
       {
         path: HOME_PATH,
-        element: <HomePage />
+        element: <PageTransition />, // o envuelve solo HomePage
+        children: [{ index: true, element: <HomePage /> }]
       },
       {
         path: INFO_PATH,
-        element: <DeveloperPage />
+        element: <PageTransition />,
+        children: [{ index: true, element: <DeveloperPage /> }]
       },
-
-      // CRUD for formalities
       {
-        path: FORMALITIES_PATH,
-        element: <FormalitiesLayout />,
+        element: (
+          <FormalitiesProvider>
+            <Outlet />
+          </FormalitiesProvider>
+        ),
         children: [
           {
-            index: true,
-            element: <FormalitiesPage />
-          },
-          {
-            path: FORMALITIES_INFO_PATH,
-            element: <FormalitiesInfoPage />
-          },
-          {
-            path: FORMALITIES_CREATE_PATH,
-            element: <FormalityFormPage />
-          },
-          {
-            path: FORMALITIES_REVIEW_PATH,
-            element: <FormalityReview />
-          },
-          {
-            path: FORMALITIES_DETAIL_PATH,
-            element: <FormalityDetail />
-          },
-          {
-            path: FORMALITIES_ONLINE_PAIMENT_PATH,
-            element: <FormalityPaymentPage />
-          },
-          {
-            path: FORMALITIES_INPERSON_PAIMENT_PATH,
-            element: <FormalityPaymentInPersonPage />
-          },
-          {
-            path: FORMALITIES_CERTIFICATE_PATH,
-            element: <FormalityCertificatePage />
+            path: FORMALITIES_PATH,
+            element: <PageTransition />,
+            children: [
+              { index: true, element: <FormalitiesPage /> },
+              { path: FORMALITIES_INFO_PATH, element: <FormalitiesInfoPage /> },
+              { path: FORMALITIES_CREATE_PATH, element: <FormalityFormPage /> },
+              { path: FORMALITIES_REVIEW_PATH, element: <FormalityReview /> },
+              { path: FORMALITIES_DETAIL_PATH, element: <FormalityDetail /> },
+              {
+                path: FORMALITIES_ONLINE_PAIMENT_PATH,
+                element: <FormalityPaymentPage />
+              },
+              {
+                path: FORMALITIES_INPERSON_PAIMENT_PATH,
+                element: <FormalityPaymentInPersonPage />
+              },
+              {
+                path: FORMALITIES_CERTIFICATE_PATH,
+                element: <FormalityCertificatePage />
+              }
+            ]
           }
         ]
       }

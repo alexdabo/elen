@@ -65,11 +65,3 @@ export const FormalitiesPage: React.FC = () => {
     </div>
   )
 }
-
-export const FormalitiesLayout = () => {
-  return (
-    <FormalitiesProvider>
-      <Outlet />
-    </FormalitiesProvider>
-  )
-}
