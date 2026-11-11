@@ -1,6 +1,6 @@
 /* Base styles: selection color and horizontal overflow prevention */
 ::selection {
-  background: rgba(11, 171, 12, .25);
+  background: rgba(11, 171, 12, 0.25);
 }
 
 html,

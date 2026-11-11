@@ -1,9 +1,9 @@
 const MARQUEE_ITEMS = [
-  "Prototipo demostrativo",
-  "No oficial",
-  "Sin validez legal",
-  "Datos ficticios",
-  "Pago simulado",
+  'Prototipo demostrativo',
+  'No oficial',
+  'Sin validez legal',
+  'Datos ficticios',
+  'Pago simulado'
 ] as const
 
 interface MarqueeProps {
@@ -20,7 +20,7 @@ export const Marquee: React.FC<MarqueeProps> = ({ items = MARQUEE_ITEMS }) => {
       <div className="marquee-track">
         {[false, true].map((isDuplicate, idx) => (
           <div key={idx} className="marquee-group" aria-hidden={isDuplicate}>
-            {items.map((text) => (
+            {items.map(text => (
               <span key={text} className="flex items-center">
                 <span className="whitespace-nowrap font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-amber-100/90">
                   {text}

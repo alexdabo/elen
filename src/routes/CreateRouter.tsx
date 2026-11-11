@@ -1,10 +1,31 @@
-import { createBrowserRouter } from "react-router-dom";
-import { MainLayout } from "@layout";
-import { DeveloperPage, FormalitiesInfoPage, FormalitiesLayout, FormalitiesPage, FormalityCertificatePage, FormalityDetail, FormalityFormPage, FormalityPaymentPage, FormalityReview, HomePage, LandingPage } from "@page";
-import { FORMALITIES_CERTIFICATE_PATH, FORMALITIES_CREATE_PATH, FORMALITIES_DETAIL_PATH, FORMALITIES_INFO_PATH, FORMALITIES_INPERSON_PAIMENT_PATH, FORMALITIES_ONLINE_PAIMENT_PATH, FORMALITIES_PATH, FORMALITIES_REVIEW_PATH, HOME_PATH, INFO_PATH} from "@config";
-import { FormalityPaymentInPersonPage } from "../pages/formalities/PaymentInPerson";
-
-
+import { createBrowserRouter } from 'react-router-dom'
+import { MainLayout } from '@layout'
+import {
+  FORMALITIES_CERTIFICATE_PATH,
+  FORMALITIES_CREATE_PATH,
+  FORMALITIES_DETAIL_PATH,
+  FORMALITIES_INFO_PATH,
+  FORMALITIES_INPERSON_PAIMENT_PATH,
+  FORMALITIES_ONLINE_PAIMENT_PATH,
+  FORMALITIES_PATH,
+  FORMALITIES_REVIEW_PATH,
+  HOME_PATH,
+  INFO_PATH
+} from '@config'
+import {
+  DeveloperPage,
+  FormalitiesInfoPage,
+  FormalitiesLayout,
+  FormalitiesPage,
+  FormalityCertificatePage,
+  FormalityDetail,
+  FormalityFormPage,
+  FormalityPaymentPage,
+  FormalityPaymentInPersonPage,
+  FormalityReview,
+  HomePage,
+  LandingPage
+} from '@page'
 
 // Define your routes here
 export const router = createBrowserRouter([
@@ -13,19 +34,20 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LandingPage />,
-      },]
+        element: <LandingPage />
+      }
+    ]
   },
   {
     element: <MainLayout />,
     children: [
       {
         path: HOME_PATH,
-        element: <HomePage />,
+        element: <HomePage />
       },
       {
         path: INFO_PATH,
-        element: <DeveloperPage />,
+        element: <DeveloperPage />
       },
 
       // CRUD for formalities
@@ -64,10 +86,9 @@ export const router = createBrowserRouter([
           {
             path: FORMALITIES_CERTIFICATE_PATH,
             element: <FormalityCertificatePage />
-          },
-
-        ],
-      },
-    ],
-  },
-]);
+          }
+        ]
+      }
+    ]
+  }
+])

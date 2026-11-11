@@ -21,20 +21,26 @@
   background: conic-gradient(
     from var(--angle),
     transparent 0deg,
-    rgba(217, 119, 6, .85) 50deg,
-    rgba(251, 191, 36, .95) 85deg,
+    rgba(217, 119, 6, 0.85) 50deg,
+    rgba(251, 191, 36, 0.95) 85deg,
     transparent 135deg
   );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   mask-composite: exclude;
   animation: borderSpin 5s linear infinite;
   pointer-events: none;
 }
 
 @keyframes borderSpin {
-  to { --angle: 360deg; }
+  to {
+    --angle: 360deg;
+  }
 }
 
 /* ---------- Pulsing alert icon ---------- */
@@ -47,13 +53,17 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  box-shadow: 0 0 0 0 rgba(245, 158, 11, .5);
-  animation: pulseRing 2.4s cubic-bezier(.4, 0, .6, 1) infinite;
+  box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  animation: pulseRing 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulseRing {
-  70%  { box-shadow: 0 0 0 14px rgba(245, 158, 11, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+  70% {
+    box-shadow: 0 0 0 14px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
 }
 
 /* ---------- Animated gradient text ---------- */
@@ -67,8 +77,13 @@
 }
 
 @keyframes gradientSlide {
-  0%, 100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ---------- Shine sweep on primary buttons ---------- */
@@ -84,9 +99,9 @@
   left: -80%;
   width: 45%;
   height: 100%;
-  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, .5), transparent);
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.5), transparent);
   transform: skewX(-18deg);
-  transition: left .55s ease;
+  transition: left 0.55s ease;
 }
 
 .btn-shine:hover::after {
@@ -110,7 +125,7 @@
   background: linear-gradient(90deg, #0bab0c, #34d399);
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform .9s cubic-bezier(.22, 1, .36, 1) .25s;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
 }
 
 .revealed .grow-underline::after {
@@ -120,8 +135,8 @@
 /* ---------- Cards with lift + top accent bar ---------- */
 .card-lift {
   transition:
-    transform .35s cubic-bezier(.22, 1, .36, 1),
-    box-shadow .35s cubic-bezier(.22, 1, .36, 1);
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card-lift::before {
@@ -135,7 +150,7 @@
   background: linear-gradient(90deg, #0bab0c, #10b981);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card-lift.accent-gray::before {
@@ -144,7 +159,7 @@
 
 .card-lift:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 45px -20px rgba(5, 46, 22, .25);
+  box-shadow: 0 24px 45px -20px rgba(5, 46, 22, 0.25);
 }
 
 .card-lift:hover::before {
@@ -164,7 +179,7 @@
 
 /* ---------- "DEMO" watermark ---------- */
 .watermark {
-  color: rgba(255, 255, 255, .04);
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, .07);
+  color: rgba(255, 255, 255, 0.04);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.07);
   user-select: none;
 }

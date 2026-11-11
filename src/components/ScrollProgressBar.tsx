@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from 'react'
 
 interface ScrollProgressBarProps {
   /** Altura en px. Por defecto 3. */
@@ -9,7 +9,7 @@ interface ScrollProgressBarProps {
 
 export const ScrollProgressBar: React.FC<ScrollProgressBarProps> = ({
   height = 3,
-  className = "bg-gradient-to-r from-primary-400 via-primary-600 to-emerald-400",
+  className = 'bg-gradient-to-r from-primary-400 via-primary-600 to-emerald-400'
 }) => {
   const barRef = useRef<HTMLDivElement>(null)
 
@@ -23,10 +23,10 @@ export const ScrollProgressBar: React.FC<ScrollProgressBarProps> = ({
       bar.style.transform = `scaleX(${max > 0 ? doc.scrollTop / max : 0})`
     }
 
-    document.addEventListener("scroll", onScroll, { passive: true })
+    document.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
 
-    return () => document.removeEventListener("scroll", onScroll)
+    return () => document.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
