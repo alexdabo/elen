@@ -1,15 +1,11 @@
 import Imagotipo from '@assets/imagotipo.png'
 import { Marquee } from '@component/Marquee'
 import { ScrollProgressBar } from '@component/ScrollProgressBar'
-import { INFO_PATH } from '@config'
+import { HOME_PATH } from '@config'
 import { Fragment } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-interface MainLayoutProps {
-  isContainer?: boolean
-}
-
-export const MainLayout: React.FC<MainLayoutProps> = ({ isContainer }) => {
+export const MainLayout: React.FC = () => {
   return (
     <Fragment>
       <ScrollProgressBar />
@@ -24,7 +20,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ isContainer }) => {
           </span>
 
           <Link
-            to={INFO_PATH}
+            to={HOME_PATH}
             className="group flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200"
           >
             <span className="flex items-center justify-center w-7 h-7 rounded-full bg-gray-100 text-gray-500 group-hover:bg-gray-200 group-hover:text-gray-700 transition-colors">
@@ -47,9 +43,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ isContainer }) => {
         </div>
       </header>
 
-      <main
-        className={`flex-1 w-full mx-auto min-h-screen px-4 py-8 pb-24 ${isContainer ? 'container' : 'max-w-2xl'}`}
-      >
+      <main className={`flex-1 w-full mx-auto min-h-screen px-4 py-8 pb-24 max-w-2xl`}>
         <Outlet />
       </main>
       <footer className="border-t border-gray-200 bg-white/70 backdrop-blur">

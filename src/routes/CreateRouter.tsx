@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom'
-import { MainLayout, PageTransition } from '@layout'
+import { CampaignLayout, MainLayout, PageTransition } from '@layout'
 import {
   FORMALITIES_CERTIFICATE_PATH,
   FORMALITIES_CREATE_PATH,
@@ -27,7 +27,7 @@ import {
 
 export const router = createBrowserRouter([
   {
-    element: <MainLayout isContainer />,
+    element: <CampaignLayout />,
     children: [{ index: true, element: <LandingPage /> }]
   },
   {

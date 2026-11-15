@@ -1,23 +1,10 @@
+// src/pages/LandingPage.tsx
 import { HOME_PATH } from '@config'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export const LandingPage: React.FC = () => {
-  const headerRef = useRef<HTMLElement>(null)
-
-  // Sombra del header al hacer scroll
-  useEffect(() => {
-    const header = headerRef.current
-    if (!header) return
-    const onScroll = () => {
-      header.classList.toggle('is-scrolled', document.documentElement.scrollTop > 10)
-    }
-    document.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => document.removeEventListener('scroll', onScroll)
-  }, [])
-
-  // Escalonado + IntersectionObserver para reveals
+  // Reveals + escalonado
   useEffect(() => {
     document.querySelectorAll<HTMLElement>('[data-stagger]').forEach(group => {
       Array.from(group.children).forEach((child, i) => {
@@ -52,54 +39,9 @@ export const LandingPage: React.FC = () => {
   }, [])
 
   return (
-    <main className="relative mx-auto max-w-4xl px-4 pb-16 pt-10 sm:px-6 sm:pt-14 lg:px-8">
-      {/* ============ Aviso principal ============ */}
-      <div id="aviso" className="gradient-border rounded-3xl border border-amber-200/80">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 via-white to-amber-50 p-6 sm:p-8">
-          <div className="pointer-events-none absolute -top-24 right-0 h-56 w-56 rounded-full bg-amber-300/25 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-amber-200/30 blur-3xl" />
-
-          <div className="relative flex items-start gap-4">
-            <span
-              className="pulse-ring mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-white shadow-lg shadow-amber-500/30"
-              aria-hidden="true"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M12 9v4" />
-                <path d="M12 17h.01" />
-                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-              </svg>
-            </span>
-            <div>
-              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-amber-600">
-                Aviso importante
-              </p>
-              <h2 className="mt-1.5 text-xl font-extrabold tracking-tight text-amber-950 sm:text-2xl">
-                Esto no es un sistema real ni oficial
-              </h2>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-amber-900/90">
-                Elén es únicamente un{' '}
-                <strong className="font-bold">prototipo demostrativo</strong>. No está
-                conectado a ningún sistema municipal, no procesa pagos reales y no emite
-                certificados con validez legal. Es una propuesta conceptual para
-                visualizar cómo podría sentirse un trámite digital.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div className="space-y-20 sm:space-y-28">
       {/* ============ Hero ============ */}
-      <section className="relative mt-14 text-center sm:mt-20">
+      <section className="relative text-center">
         <div
           className="blob pointer-events-none absolute -top-16 right-[8%] -z-10 h-72 w-72 rounded-full bg-primary-200/50 blur-3xl sm:h-96 sm:w-96"
           aria-hidden="true"
@@ -118,7 +60,7 @@ export const LandingPage: React.FC = () => {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
           </span>
-          Prototipo · Sin validez oficial
+          Propuesta de Byron Pérez · Prototipo sin validez oficial
         </span>
 
         <h1
@@ -135,7 +77,12 @@ export const LandingPage: React.FC = () => {
         >
           Elén es una demostración interactiva de cómo un ciudadano de Guano podría
           solicitar un Certificado de Gravamen sin tener que desplazarse varias veces al
-          municipio. Todo lo que ves aquí es{' '}
+          municipio. Es una idea de{' '}
+          <strong className="font-semibold text-primary-700">Byron Pérez</strong> para un{' '}
+          <strong className="font-semibold text-primary-700">
+            municipio digital y transparente
+          </strong>
+          . Todo lo que ves aquí es{' '}
           <strong className="font-semibold text-amber-700">simulado</strong>.
         </p>
 
@@ -308,7 +255,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* ============ Qué es / qué no es ============ */}
-      <section id="que-es" className="mt-20 scroll-mt-28 sm:mt-28">
+      <section id="que-es" className="scroll-mt-28">
         <div className="reveal">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-primary-700">
             01 · Claridad
@@ -317,7 +264,9 @@ export const LandingPage: React.FC = () => {
             Qué es y qué no es Elén
           </h2>
           <p className="mt-3 max-w-2xl text-base text-gray-600 sm:text-lg">
-            Para evitar confusiones, aquí está la diferencia en claro.
+            Para evitar confusiones, aquí está la diferencia en claro. Elén nace dentro de
+            la propuesta de campaña de Byron Pérez, pero{' '}
+            <strong>no es un servicio del municipio</strong>.
           </p>
         </div>
 
@@ -350,8 +299,7 @@ export const LandingPage: React.FC = () => {
                   'No es un sistema oficial del GAD Municipal de Guano.',
                   'No está conectado a catastro, Registro de la Propiedad ni SRI.',
                   'No procesa pagos reales ni emite certificados válidos.',
-                  'No reemplaza ningún trámite actual.',
-                  'No representa una postura política ni una campaña.'
+                  'No reemplaza ningún trámite actual.'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span
@@ -436,11 +384,93 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ Transparencia ============ */}
-      <section className="mt-20 scroll-mt-28 sm:mt-28">
+      {/* ============ Dónde encaja en el plan ============ */}
+      <section id="plan" className="scroll-mt-28">
         <div className="reveal">
           <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-primary-700">
-            02 · Transparencia
+            02 · Dónde encaja
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Parte del eje «Municipio digital y transparente»
+          </h2>
+          <p className="mt-3 max-w-2xl text-base text-gray-600 sm:text-lg">
+            Elén es una muestra visual de la propuesta 8 del plan de gobierno de Byron
+            Pérez: modernizar la administración municipal, simplificar trámites y
+            fortalecer la transparencia y la participación ciudadana.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2" data-stagger>
+          <div className="card-lift rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-7">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary-100 font-mono text-sm font-bold text-primary-700">
+              8
+            </span>
+            <h3 className="mt-4 text-lg font-extrabold text-gray-900">
+              Municipio digital y transparente
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              Modernizar la administración municipal, simplificar trámites y fortalecer la
+              transparencia y participación ciudadana.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-primary-500" />
+                Trámites en línea, sin filas innecesarias.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-primary-500" />
+                Información pública accesible y clara.
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-primary-500" />
+                Canales digitales de participación ciudadana.
+              </li>
+            </ul>
+          </div>
+
+          <div className="card-lift rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-amber-50 p-6 shadow-sm sm:p-7">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-amber-100 font-mono text-sm font-bold text-amber-700">
+              →
+            </span>
+            <h3 className="mt-4 text-lg font-extrabold text-gray-900">
+              Elén como demostración
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              Este prototipo no es el sistema final: es una forma de{' '}
+              <strong>abrir la conversación</strong> con los guaneños sobre cómo debería
+              sentirse un trámite digital, antes de implementarlo.
+            </p>
+            <a
+              href="https://byronperez.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-xl border border-amber-300 bg-white px-4 py-2 text-sm font-bold text-amber-800 transition hover:bg-amber-50"
+            >
+              Ver el plan completo en byronperez.online
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ Transparencia ============ */}
+      <section id="transparencia" className="scroll-mt-28">
+        <div className="reveal">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-primary-700">
+            03 · Transparencia
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Transparencia desde el primer clic
@@ -548,48 +578,101 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ============ Aviso final ============ */}
+      {/* ============ Aviso principal ============ */}
+      <div id="aviso" className="gradient-border rounded-3xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 via-white to-amber-50 p-6 sm:p-8">
+          <div className="pointer-events-none absolute -top-24 right-0 h-56 w-56 rounded-full bg-amber-300/25 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-amber-200/30 blur-3xl" />
+
+          <div className="relative flex items-start gap-4">
+            <span
+              className="pulse-ring mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-white shadow-lg shadow-amber-500/30"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              </svg>
+            </span>
+            <div>
+              <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-amber-600">
+                Aviso importante
+              </p>
+              <h2 className="mt-1.5 text-xl font-extrabold tracking-tight text-amber-950 sm:text-2xl">
+                Esto no es un sistema real ni oficial
+              </h2>
+              <p className="mt-2.5 text-[15px] leading-relaxed text-amber-900/90">
+                Elén es únicamente un{' '}
+                <strong className="font-bold">prototipo demostrativo</strong> impulsado
+                como
+                <strong className="font-bold">
+                  {' '}
+                  propuesta de campaña de Byron Pérez
+                </strong>{' '}
+                para el cantón Guano. No está conectado a ningún sistema municipal, no
+                procesa pagos reales y no emite certificados con validez legal. Es una
+                propuesta conceptual para visualizar cómo podría sentirse un trámite
+                digital.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ============ CTA final ============ */}
       <section className="mt-20 sm:mt-28">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-950 via-gray-900 to-emerald-950 p-7 shadow-2xl ring-1 ring-white/10 sm:p-10">
-          <span
-            className="watermark pointer-events-none absolute -bottom-8 right-2 select-none text-[7rem] font-extrabold leading-none tracking-tighter sm:text-[10rem]"
-            aria-hidden="true"
-          >
-            DEMO
-          </span>
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 p-7 shadow-2xl ring-1 ring-white/10 sm:p-10">
           <div
-            className="blob pointer-events-none absolute -top-24 right-10 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl"
+            className="blob pointer-events-none absolute -top-24 right-10 h-72 w-72 rounded-full bg-amber-400/20 blur-3xl"
             aria-hidden="true"
           />
-
-          <div className="relative z-10 space-y-5" data-stagger>
-            <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-amber-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-              Recordatorio final
-            </span>
-            <h2 className="max-w-xl text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-              Recuerda: esto es solo una propuesta
-            </h2>
-            <p className="max-w-2xl text-[15px] leading-relaxed text-gray-300/90 sm:text-base">
-              Elén es un prototipo creado para explorar una idea: reducir desplazamientos
-              innecesarios en trámites municipales. No es un sistema en funcionamiento, no
-              pertenece a ninguna institución y{' '}
-              <strong className="font-semibold text-white">
-                no debe usarse como si lo fuera
-              </strong>
-              . Cualquier parecido con un servicio oficial es solo intención de diseño, no
-              una realidad operativa.
-            </p>
-            <p className="pt-1 text-base font-semibold text-white sm:text-lg">
-              Si tienes dudas, asume siempre lo más seguro:{' '}
-              <span className="grow-underline text-gradient font-extrabold">
-                esto es una demostración
+          <div className="relative z-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-white/90">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                Demo interactiva
               </span>
-              .
-            </p>
+              <h2 className="mt-4 max-w-xl text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                Pruébalo tú mismo: así se vería el trámite
+              </h2>
+              <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-primary-50/90">
+                Recorre el flujo completo del Certificado de Gravamen simulado. Recuerda:
+                es una demostración de la propuesta de Byron Pérez, sin validez oficial.
+              </p>
+            </div>
+            <Link
+              to={HOME_PATH}
+              className="inline-flex min-h-12 flex-none items-center justify-center gap-2 rounded-xl bg-white px-7 text-base font-bold text-primary-800 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              Abrir la demostración
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

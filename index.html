@@ -1,26 +1,162 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- ============ Básicos ============ -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Elén es un prototipo conceptual para facilitar trámites del GAD Municipal del Cantón Guano de forma digital, ahorrando tiempo y desplazamientos." />
-    <meta name="keywords" content="trámites municipales, GAD Guano, Cantón Guano, servicios en línea, certificado de gravamen, Elén, Alexander Bonilla" />
-    <meta name="author" content="Alexander Bonilla" />
-    <meta property="og:title" content="Elén - Trámites Municipales del Cantón Guano" />
-    <meta property="og:description" content="Elén es un prototipo conceptual para facilitar trámites del GAD Municipal del Cantón Guano de forma digital, ahorrando tiempo y desplazamientos." />
-    <meta property="og:image" content="/src/assets/small-imagotipo.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ============ Título y descripción ============ -->
+    <title>Elén · Prototipo de trámites digitales | Propuesta de Byron Pérez</title>
+    <meta
+      name="description"
+      content="Elén es un prototipo demostrativo de trámite municipal digital para Guano, propuesto por la campaña de Byron Pérez. Simula el Certificado de Gravamen sin filas ni desplazamientos. Sin validez oficial."
+    />
+    <meta
+      name="keywords"
+      content="Elén, trámites municipales Guano, GAD Guano, Byron Pérez, Alianza Vida, Guano tiene futuro, municipio digital, certificado de gravamen, Chimborazo, Ecuador, prototipo, gobierno digital"
+    />
+    <meta name="author" content="Byron Pérez · Campaña Alianza Vida" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#0bab0c" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- ============ Canonical y alternates ============ -->
+    <link rel="canonical" href="https://byronperez.online/" />
+    <link rel="alternate" hreflang="es-EC" href="https://byronperez.online/" />
+    <link rel="alternate" hreflang="es" href="https://byronperez.online/" />
+    <link rel="alternate" hreflang="x-default" href="https://byronperez.online/" />
+
+    <!-- ============ Favicon ============ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ============ Open Graph (Facebook, WhatsApp, LinkedIn) ============ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Byron Pérez · Guano tiene futuro" />
+    <meta property="og:locale" content="es_EC" />
+    <meta property="og:url" content="https://byronperez.online/" />
+    <meta property="og:title" content="Elén · Prototipo de trámites digitales para Guano" />
+    <meta
+      property="og:description"
+      content="Así podría sentirse un trámite municipal desde tu teléfono. Prototipo demostrativo de la propuesta de Byron Pérez para un Guano digital y transparente. Sin validez oficial."
+    />
+    <meta property="og:image" content="https://byronperez.online/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://byronperez.online/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Elén, prototipo de trámites digitales para Guano — Propuesta de Byron Pérez" />
+
+    <!-- ============ Twitter / X ============ -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/src/assets/imagotipo.png" />
-    <link href="/src/style/main.css" rel="stylesheet">
-    <title>Elén - Trámites Municipales del Cantón Guano</title>
+    <meta name="twitter:site" content="@byronperez" />
+    <meta name="twitter:creator" content="@byronperez" />
+    <meta name="twitter:title" content="Elén · Prototipo de trámites digitales para Guano" />
+    <meta
+      name="twitter:description"
+      content="Así podría sentirse un trámite municipal desde tu teléfono. Prototipo de la propuesta de Byron Pérez para Guano. Sin validez oficial."
+    />
+    <meta name="twitter:image" content="https://byronperez.online/twitter-card.jpg" />
+    <meta name="twitter:image:alt" content="Elén, prototipo de trámites digitales para Guano" />
+
+    <!-- ============ Fuentes ============ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
-  rel="stylesheet"
-/>
-  </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ============ Estilos ============ -->
+    <link href="/src/style/main.css" rel="stylesheet" />
+
+    <!-- ============ JSON-LD: Organización / Campaña ============ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Campaña Byron Pérez · Alianza Vida",
+      "alternateName": "Byron Pérez para Guano",
+      "url": "https://byronperez.online/",
+      "logo": "https://byronperez.online/logo.png",
+      "description": "Campaña de Byron Pérez a la Alcaldía de Guano, Chimborazo, Ecuador. Propuesta de un Guano moderno, transparente y digital.",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Cantón Guano, Chimborazo, Ecuador"
+      },
+      "sameAs": [
+        "https://www.facebook.com/byronperez",
+        "https://www.instagram.com/byronperez",
+        "https://twitter.com/byronperez"
+      ]
+    }
+    </script>
+
+    <!-- ============ JSON-LD: WebSite + SearchAction ============ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Elén · Byon Pérez",
+      "url": "https://byronperez.online/",
+      "inLanguage": "es-EC",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Campaña Byron Pérez · Alianza Vida"
+      }
+    }
+    </script>
+
+    <!-- ============ JSON-LD: SoftwareApplication (el prototipo) ============ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Elén",
+      "applicationCategory": "GovernmentApplication",
+      "operatingSystem": "Web",
+      "description": "Prototipo demostrativo de trámite municipal digital para el Cantón Guano. Simula la solicitud de un Certificado de Gravamen sin validez oficial.",
+      "url": "https://byronperez.online/demo",
+      "author": {
+        "@type": "Person",
+        "name": "Byron Pérez"
+      },
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- ============ JSON-LD: BreadcrumbList ============ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://byronperez.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Elén · Prototipo",
+          "item": "https://byronperez.online/demo"
+        }
+      ]
+    }
+    </script>
+</head>
   <body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
