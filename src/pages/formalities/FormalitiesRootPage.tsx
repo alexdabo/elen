@@ -1,8 +1,7 @@
 import { Fab } from '@component/FabButton'
 import { FORMALITIES_INFO_PATH } from '@config'
 import type React from 'react'
-import { Link, Outlet, useNavigate } from 'react-router-dom'
-import { FormalitiesProvider } from './FormalitiesContext'
+import { Link, useNavigate } from 'react-router-dom'
 import { FormalityCard } from './FormalityCard'
 import { useFormalities } from './UseFormalities'
 
