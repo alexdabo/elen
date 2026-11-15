@@ -8,7 +8,6 @@ import {
   FORMALITIES_INPERSON_PAIMENT_PATH,
   FORMALITIES_ONLINE_PAIMENT_PATH,
   FORMALITIES_PATH,
-  FORMALITIES_REVIEW_PATH,
   HOME_PATH,
   INFO_PATH
 } from '@config'
@@ -22,7 +21,6 @@ import {
   FormalityFormPage,
   FormalityPaymentPage,
   FormalityPaymentInPersonPage,
-  FormalityReview,
   HomePage,
   LandingPage
 } from '@page'
@@ -59,7 +57,7 @@ export const router = createBrowserRouter([
               { index: true, element: <FormalitiesPage /> },
               { path: FORMALITIES_INFO_PATH, element: <FormalitiesInfoPage /> },
               { path: FORMALITIES_CREATE_PATH, element: <FormalityFormPage /> },
-              { path: FORMALITIES_REVIEW_PATH, element: <FormalityReview /> },
+
               { path: FORMALITIES_DETAIL_PATH, element: <FormalityDetail /> },
               {
                 path: FORMALITIES_ONLINE_PAIMENT_PATH,
