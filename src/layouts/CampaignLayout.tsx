@@ -35,7 +35,7 @@ export const CampaignLayout: React.FC = () => {
             target="_blank"
             aria-label="Alianza Vida — Byron Pérez"
           >
-            <span className="grid h-10 w-15 place-items-center rounded-xl bg-[#BD2475] font-display text-base text-white transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
+            <span className="hidden sm:grid h-10 w-15 place-items-center rounded-xl bg-[#BD2475] font-display text-base text-white transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
               20-17
             </span>
             <span className="leading-none">
@@ -49,7 +49,7 @@ export const CampaignLayout: React.FC = () => {
           </a>
 
           <div className="flex items-center gap-2">
-            <span className="hidden rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-800 sm:inline-flex">
+            <span className="hidden rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-800 md:inline-flex">
               Prototipo · Sin validez oficial
             </span>
             <a
