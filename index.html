@@ -1,162 +1,212 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- ============ Básicos ============ -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+  <!-- ============ Básicos ============ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ============ Título y descripción ============ -->
-    <title>Elén · Prototipo de trámites digitales | Propuesta de Byron Pérez</title>
-    <meta
-      name="description"
-      content="Elén es un prototipo demostrativo de trámite municipal digital para Guano, propuesto por la campaña de Byron Pérez. Simula el Certificado de Gravamen sin filas ni desplazamientos. Sin validez oficial."
-    />
-    <meta
-      name="keywords"
-      content="Elén, trámites municipales Guano, GAD Guano, Byron Pérez, Alianza Vida, Guano tiene futuro, municipio digital, certificado de gravamen, Chimborazo, Ecuador, prototipo, gobierno digital"
-    />
-    <meta name="author" content="Byron Pérez · Campaña Alianza Vida" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="theme-color" content="#0bab0c" />
-    <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#0bab0c" />
+  <meta name="color-scheme" content="light" />
 
-    <!-- ============ Canonical y alternates ============ -->
-    <link rel="canonical" href="https://byronperez.online/" />
-    <link rel="alternate" hreflang="es-EC" href="https://byronperez.online/" />
-    <link rel="alternate" hreflang="es" href="https://byronperez.online/" />
-    <link rel="alternate" hreflang="x-default" href="https://byronperez.online/" />
+  <title>
+    Elén | Plataforma de trámites digitales para Guano, Ecuador
+  </title>
 
-    <!-- ============ Favicon ============ -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+  <meta
+    name="description"
+    content="Conoce Elén, un prototipo de plataforma de trámites digitales para el cantón Guano, Chimborazo. Explora cómo realizar gestiones municipales en línea, de forma sencilla, ágil y transparente. Prototipo demostrativo sin validez oficial."
+  />
 
-    <!-- ============ Open Graph (Facebook, WhatsApp, LinkedIn) ============ -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Byron Pérez · Guano tiene futuro" />
-    <meta property="og:locale" content="es_EC" />
-    <meta property="og:url" content="https://byronperez.online/" />
-    <meta property="og:title" content="Elén · Prototipo de trámites digitales para Guano" />
-    <meta
-      property="og:description"
-      content="Así podría sentirse un trámite municipal desde tu teléfono. Prototipo demostrativo de la propuesta de Byron Pérez para un Guano digital y transparente. Sin validez oficial."
-    />
-    <meta property="og:image" content="https://byronperez.online/og-image.jpg" />
-    <meta property="og:image:secure_url" content="https://byronperez.online/og-image.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Elén, prototipo de trámites digitales para Guano — Propuesta de Byron Pérez" />
+  <meta name="author" content="Byron Pérez" />
 
-    <!-- ============ Twitter / X ============ -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@byronperez" />
-    <meta name="twitter:creator" content="@byronperez" />
-    <meta name="twitter:title" content="Elén · Prototipo de trámites digitales para Guano" />
-    <meta
-      name="twitter:description"
-      content="Así podría sentirse un trámite municipal desde tu teléfono. Prototipo de la propuesta de Byron Pérez para Guano. Sin validez oficial."
-    />
-    <meta name="twitter:image" content="https://byronperez.online/twitter-card.jpg" />
-    <meta name="twitter:image:alt" content="Elén, prototipo de trámites digitales para Guano" />
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
 
-    <!-- ============ Fuentes ============ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <meta name="googlebot" content="index, follow" />
 
-    <!-- ============ Estilos ============ -->
-    <link href="/src/style/main.css" rel="stylesheet" />
+  <meta name="language" content="Spanish" />
 
-    <!-- ============ JSON-LD: Organización / Campaña ============ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Campaña Byron Pérez · Alianza Vida",
-      "alternateName": "Byron Pérez para Guano",
-      "url": "https://byronperez.online/",
-      "logo": "https://byronperez.online/logo.png",
-      "description": "Campaña de Byron Pérez a la Alcaldía de Guano, Chimborazo, Ecuador. Propuesta de un Guano moderno, transparente y digital.",
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Cantón Guano, Chimborazo, Ecuador"
-      },
-      "sameAs": [
-        "https://www.facebook.com/byronperez",
-        "https://www.instagram.com/byronperez",
-        "https://twitter.com/byronperez"
-      ]
-    }
-    </script>
+  <!-- ============ Canonical ============ -->
+  <link
+    rel="canonical"
+    href="https://elen.byronperez.online/"
+  />
 
-    <!-- ============ JSON-LD: WebSite + SearchAction ============ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Elén · Byon Pérez",
-      "url": "https://byronperez.online/",
-      "inLanguage": "es-EC",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Campaña Byron Pérez · Alianza Vida"
-      }
-    }
-    </script>
+  <!-- ============ Idioma ============ -->
+  <link
+    rel="alternate"
+    hreflang="es-EC"
+    href="https://elen.byronperez.online/"
+  />
 
-    <!-- ============ JSON-LD: SoftwareApplication (el prototipo) ============ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Elén",
-      "applicationCategory": "GovernmentApplication",
-      "operatingSystem": "Web",
-      "description": "Prototipo demostrativo de trámite municipal digital para el Cantón Guano. Simula la solicitud de un Certificado de Gravamen sin validez oficial.",
-      "url": "https://byronperez.online/demo",
-      "author": {
-        "@type": "Person",
-        "name": "Byron Pérez"
-      },
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
+  <link
+    rel="alternate"
+    hreflang="es"
+    href="https://elen.byronperez.online/"
+  />
 
-    <!-- ============ JSON-LD: BreadcrumbList ============ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Inicio",
-          "item": "https://byronperez.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Elén · Prototipo",
-          "item": "https://byronperez.online/demo"
+  <link
+    rel="alternate"
+    hreflang="x-default"
+    href="https://elen.byronperez.online/"
+  />
+
+  <!-- ============ Favicon ============ -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- ============ Open Graph ============ -->
+  <meta property="og:type" content="website" />
+
+  <meta property="og:site_name" content="Elén" />
+
+  <meta property="og:locale" content="es_EC" />
+
+  <meta
+    property="og:url"
+    content="https://elen.byronperez.online/"
+  />
+
+  <meta
+    property="og:title"
+    content="Elén | Trámites digitales para Guano"
+  />
+
+  <meta
+    property="og:description"
+    content="Descubre cómo podría funcionar un municipio digital. Elén es un prototipo de trámites municipales en línea para Guano, impulsado como propuesta tecnológica por Byron Pérez. Sin validez oficial."
+  />
+
+  <meta
+    property="og:image"
+    content="https://elen.byronperez.online/og-image.png"
+  />
+
+  <meta
+    property="og:image:secure_url"
+    content="https://elen.byronperez.online/og-image.png"
+  />
+
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="450" />
+
+  <meta
+    property="og:image:alt"
+    content="Elén, prototipo de plataforma de trámites digitales para el cantón Guano, Ecuador."
+  />
+
+  <!-- ============ Twitter / X ============ -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta
+    name="twitter:title"
+    content="Elén | Trámites digitales para Guano"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Un prototipo de cómo podrían funcionar los trámites municipales digitales en Guano, Chimborazo. Tecnología, agilidad y transparencia. Sin validez oficial."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://elen.byronperez.online/og-image.png"
+  />
+
+  <meta
+    name="twitter:image:alt"
+    content="Elén, plataforma demostrativa de trámites digitales para Guano."
+  />
+
+  <!-- ============ Fuentes ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ============ Estilos ============ -->
+  <link href="/src/style/main.css" rel="stylesheet" />
+
+  <!-- ============ Datos estructurados JSON-LD ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://elen.byronperez.online/#website",
+        "name": "Elén",
+        "alternateName": "Elén - Trámites digitales para Guano",
+        "url": "https://elen.byronperez.online/",
+        "description": "Prototipo demostrativo de una plataforma de trámites municipales digitales para el cantón Guano, Chimborazo, Ecuador.",
+        "inLanguage": "es-EC",
+        "publisher": {
+          "@id": "https://elen.byronperez.online/#author"
         }
-      ]
-    }
-    </script>
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://elen.byronperez.online/#webpage",
+        "url": "https://elen.byronperez.online/",
+        "name": "Elén | Plataforma de trámites digitales para Guano",
+        "description": "Explora Elén, un prototipo de servicios y trámites municipales digitales para Guano, Ecuador.",
+        "isPartOf": {
+          "@id": "https://elen.byronperez.online/#website"
+        },
+        "about": {
+          "@id": "https://elen.byronperez.online/#application"
+        },
+        "inLanguage": "es-EC"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://elen.byronperez.online/#author",
+        "name": "Byron Pérez",
+        "url": "https://byronperez.online/"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://elen.byronperez.online/#application",
+        "name": "Elén",
+        "alternateName": "Elén - Plataforma de trámites digitales",
+        "applicationCategory": "GovernmentApplication",
+        "applicationSubCategory": "Trámites municipales digitales",
+        "operatingSystem": "Web",
+        "url": "https://elen.byronperez.online/",
+        "description": "Prototipo demostrativo de una plataforma de servicios y trámites municipales digitales para el cantón Guano, provincia de Chimborazo, Ecuador. Incluye una simulación del trámite de Certificado de Gravamen. No es una plataforma oficial y sus operaciones no tienen validez administrativa.",
+        "inLanguage": "es-EC",
+        "isAccessibleForFree": true,
+        "author": {
+          "@id": "https://elen.byronperez.online/#author"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Cantón Guano, Chimborazo, Ecuador"
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
+
   <body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
